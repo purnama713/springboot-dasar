@@ -1,5 +1,7 @@
-package com.belajar.spring_dasar;
+package com.belajar.spring_dasar.configuration;
 
+
+import com.belajar.spring_dasar.data.Bar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 public class BarConfiguration {
 
     @Bean
-    public String bar() {
-        return "Bar Bean";
+    public Bar bar() {
+        return new Bar();
     }
 
 }

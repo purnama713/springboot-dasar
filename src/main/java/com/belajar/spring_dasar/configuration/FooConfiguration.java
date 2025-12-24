@@ -1,4 +1,4 @@
-package com.belajar.spring_dasar;
+package com.belajar.spring_dasar.configuration;
 
 import com.belajar.spring_dasar.data.Foo;
 import org.springframework.context.annotation.Bean;
