@@ -27,4 +27,18 @@ public class ScopeTest {
         Assertions.assertNotSame(foo1, foo3);
         Assertions.assertNotSame(foo2, foo3);
     }
+
+    // Test untuk scope custom doubleton
+    @Test
+    void testDoubletonScope() {
+        // Test untuk memastikan bahwa bean dengan scope doubleton menghasilkan dua instance yang bergantian
+        var bar1 = applicationContext.getBean("bar");
+        var bar2 = applicationContext.getBean("bar");
+        var bar3 = applicationContext.getBean("bar");
+        var bar4 = applicationContext.getBean("bar");
+
+        Assertions.assertNotSame(bar1, bar2); // Memastikan bahwa kedua instance berbeda
+        Assertions.assertSame(bar1, bar3);    // Memastikan bahwa instance pertama dan ketiga sama
+        Assertions.assertSame(bar2, bar4);    // Memastikan bahwa instance kedua dan keempat sama
+    }
 }
