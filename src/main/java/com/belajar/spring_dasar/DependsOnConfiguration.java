@@ -6,13 +6,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Lazy;
 
 @Slf4j
 @Configuration
 public class DependsOnConfiguration {
 
+    @Lazy // Agar bean foo tidak langsung diinisialisasi saat konteks dibuat
     @Bean
-    @DependsOn({ "bar"})
+    @DependsOn({"bar"})
     public Foo foo() {
         log.info("Create Foo");
         return new Foo();
