@@ -1,6 +1,7 @@
 package com.belajar.spring_dasar;
 
 import com.belajar.spring_dasar.data.Connection;
+import com.belajar.spring_dasar.data.Server;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,5 +27,12 @@ public class LifeCycleTest {
     @Test
     void testConnection() {
         Connection connection = applicationContext.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer() {
+        // Server bean akan otomatis diinisialisasi saat konteks aplikasi dibuat
+        // dan akan dihentikan saat konteks aplikasi ditutup
+        applicationContext.getBean(Server.class);
     }
 }
