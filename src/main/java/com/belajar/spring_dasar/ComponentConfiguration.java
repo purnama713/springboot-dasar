@@ -4,7 +4,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "com.belajar.spring_dasar.service")
+@ComponentScan(basePackages = {
+        "com.belajar.spring_dasar.service",
+        "com.belajar.spring_dasar.repository"})
 public class ComponentConfiguration {
 
 }
