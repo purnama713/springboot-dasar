@@ -1,5 +1,6 @@
 package com.belajar.spring_dasar;
 
+import com.belajar.spring_dasar.data.MultiFoo;
 import com.belajar.spring_dasar.repository.CategoryRepository;
 import com.belajar.spring_dasar.repository.CustomerRepository;
 import com.belajar.spring_dasar.repository.ProductRepository;
@@ -60,5 +61,14 @@ public class ComponentTest {
 
          Assertions.assertSame(normalCustomerRepository, customerService.getNormalCustomerRepository());
          Assertions.assertSame(premiumCustomerRepository, customerService.getPremiumCustomerRepository());
+    }
+
+    // Test Object Provider Dependency Injection
+    @Test
+    void testObjectProvider() {
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+
+        Assertions.assertNotNull(multiFoo);
+        Assertions.assertEquals(3, multiFoo.getFoos().size());
     }
 }
