@@ -1,0 +1,7 @@
+package com.belajar.spring_dasar.repository;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class CategoryRepository {
+}
